@@ -1,0 +1,14 @@
+{
+  "name": "craftpack",
+  "version": "1.0.0",
+  "description": "Quickly create your favourite modpacks and never worry about versioning!",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ihsan",
+  "license": "MIT",
+  "dependencies": {
+    "firebase": "^10.5.2"
+  }
+}
