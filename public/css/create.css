@@ -1,0 +1,141 @@
+@import './variables.css';
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    padding: 1rem;
+    border-bottom: 1px solid #555;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+}
+
+header>span {
+    font-size: 1.3rem;
+
+}
+
+h1 {
+    margin: 0;
+}
+
+main {
+    padding: 0;
+}
+
+.input-container {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-radius: 0.25rem;
+    background-color: #333;
+    border-bottom: 3px solid #999999;
+    
+    transition: 0.2s;
+    
+    color: #fff;
+    
+    box-sizing: border-box;
+}
+
+input {
+    flex: 1 1 auto;
+    background-color: transparent;
+    border: none;
+    outline: none;
+
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.15rem;
+    padding: 0.65rem;
+    color: white;
+}
+
+input::placeholder {
+    color: white;
+    font-weight: 400;
+}
+
+.input-container:focus-within {
+    border-bottom-color: #d4b721;
+}
+
+.search-btn {
+    background-color: transparent;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    
+    width: 50px;
+    padding: 15px;
+    
+}
+
+.search-btn:hover {
+    background-color: #242424;
+}
+.search-btn svg {
+    stroke: #999999;
+}
+
+main {
+    flex: 1 1 auto;
+    display: flex;
+    gap: 1rem;
+}
+
+main > div {
+    width: 50%;
+    height: 100%;
+    max-height: 100%;
+    padding: 1rem;
+    box-sizing: border-box  ;
+}
+
+main > div:not(:last-child) {
+    border-right: 1px solid #555;
+}
+
+/* ==== MOD ==== */
+
+
+.mod-container {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.mod {
+    display: flex;
+    gap: 1rem;
+    background-color: #252525;
+    padding: 1rem;
+}
+
+
+
+.mod-name {
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+.mod-description {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    font-weight: 300;
+
+}
+
+
+.mod-thumbnail {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+}
+
