@@ -5,7 +5,9 @@ const API_KEY = "$2a$10$JcPmO9ZShvIWdhe5DXQNEuYurKuQCThNVJSlh4afL4UHnQO3xGDJy";
 const mod_search_input = document.querySelector('.mod-search-input');
 const mod_container = document.querySelector('.mod-container');
 const search_button = document.querySelector('.search-btn');
-
+const add_mod_card = document.querySelector('.add-mod-card');
+const mod_menu_dialog = document.querySelector('.add-mod-menu');
+const mod_menu_close = document.querySelector('.mod-menu-close');
 
 async function searchMods(searchTerm) {
     const response = await fetch(`https://api.curseforge.com/v1/mods/search?gameId=432&sortField=6&sortOrder=desc&searchFilter=${searchTerm}`, {
@@ -67,3 +69,11 @@ search_button.addEventListener('click', (e) => {
     processSearch(mod_search_input.value);
 });
 
+
+add_mod_card.addEventListener('click', (e) => {
+    mod_menu_dialog.show();
+});
+
+mod_menu_close.addEventListener('click', (e) => {
+    mod_menu_dialog.close();
+});

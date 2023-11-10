@@ -12,11 +12,20 @@
 </head>
 <body>
     <header>
-        <h1>Craftpack</h1>
+        <a href="/"><h1>Craftpack</h1></a>
         <span>New modpack</span>
     </header>
     <main>
-        <div class="new-mods">
+        <div class="mod-list">
+            <button class="add-mod-card">
+                <div>Add mod</div>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24px" height="24px"><path fill-rule="evenodd" d="M 11 2 L 11 11 L 2 11 L 2 13 L 11 13 L 11 22 L 13 22 L 13 13 L 22 13 L 22 11 L 13 11 L 13 2 Z"/></svg>
+            </button>
+        </div>
+    </main>
+    
+    <dialog class="add-mod-menu">
+        <div class="mod-menu-header">
             <div class="input-container">
                 <input type="text" class="mod-search-input" placeholder="Search mods">
                 <button class="search-btn">
@@ -25,14 +34,15 @@
                     </svg>
                 </button>
             </div>
-            <div class="mod-container">
-    
-            </div>
+            <button class="mod-menu-close">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18 6L6 18M6 6L18 18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
         </div>
-        <div class="selected-mods">
+        <div class="mod-container">
 
         </div>
-    </main>
-
+    </dialog>
 </body>
 </html>
