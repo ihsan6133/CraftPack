@@ -17,6 +17,13 @@ body, dialog {
     border: none;
 }
 
+button {
+    color: #fff;
+    border: none;
+    font-family: 'Quicksand', sans-serif;
+}
+
+
 h1 {
     color: var(--h1-color);
 }

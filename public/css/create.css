@@ -100,19 +100,34 @@ input::placeholder {
 
 
 .mod-container {
+    
     margin-top: 1rem;
     display: flex;
     flex-direction: column;
     gap: 1rem;
 }
 
+
 .mod {
+    cursor: pointer;
     display: flex;
     gap: 1rem;
     background-color: #252525;
     padding: 1rem;
 }
 
+.mod-already-added {
+    background-color: #333;
+    cursor: default;
+}
+
+.mod:hover {
+    background-color: #333;
+}
+
+.mod-info-container {
+    text-align: left;
+}
 
 
 .mod-name {

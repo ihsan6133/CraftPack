@@ -8,6 +8,8 @@ const search_button = document.querySelector('.search-btn');
 const add_mod_card = document.querySelector('.add-mod-card');
 const mod_menu_dialog = document.querySelector('.add-mod-menu');
 const mod_menu_close = document.querySelector('.mod-menu-close');
+const mod_list_container = document.querySelector('.mod-list');
+let mod_list = [];
 
 async function searchMods(searchTerm) {
     const response = await fetch(`https://api.curseforge.com/v1/mods/search?gameId=432&sortField=6&sortOrder=desc&searchFilter=${searchTerm}`, {
@@ -20,8 +22,20 @@ async function searchMods(searchTerm) {
 }
 
 function generateModElement(mod) {
-    const container = document.createElement('div');
+
+    // Check if mod is already in list
+    const modAlreadyInList = mod_list.some((element) => {
+        return element.id === mod.id;
+    });
+
+    const container = document.createElement('button');
     container.classList.add('mod');
+
+    if (modAlreadyInList) {
+        container.classList.add('mod-already-added');
+        container.disabled = true;
+        container.title = "Mod already added to modpack";
+    }
 
     const thumbnail = document.createElement('img');
     thumbnail.classList.add('mod-thumbnail');
@@ -41,6 +55,10 @@ function generateModElement(mod) {
 
     infoContainer.append(name, description);
     container.append(thumbnail, infoContainer);
+
+
+    container.cp_modData = mod;
+    container.addEventListener('click', onModClicked);
 
     return container;
 }
@@ -77,3 +95,14 @@ add_mod_card.addEventListener('click', (e) => {
 mod_menu_close.addEventListener('click', (e) => {
     mod_menu_dialog.close();
 });
+
+function onModClicked(event) {
+    mod_menu_dialog.close();
+    const mod = event.currentTarget.cp_modData;
+
+    event.currentTarget.classList.add('mod-already-added');
+    event.currentTarget.disabled = true;
+    event.currentTarget.title = "Mod already added to modpack";
+
+    mod_list.push(mod);
+}
